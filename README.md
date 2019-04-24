@@ -21,12 +21,12 @@ yarn add @sourcegraph/extension-api-stubs
 
 ```ts
 import mock from 'mock-require'
-const sourcegraph = createMockSourcegraphAPI()
+import { createStubSourcegraphAPI, createStubExtensionContext } from '@sourcegraph/extension-api-stubs'
+const sourcegraph = createStubSourcegraphAPI()
 // For modules importing Range/Location/Position/URI/etc
 mock('sourcegraph', sourcegraph)
 
 import * as sinon from 'sinon'
-import * as sourcegraph from 'sourcegraph'
 import { activate } from './extension'
 
 describe('my extension', () => {
