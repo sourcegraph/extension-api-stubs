@@ -26,7 +26,7 @@ describe('createStubSourcegraphAPI()', () => {
     // })
 })
 
-describe('createStub', () => {
+describe('createStubExtensionContext()', () => {
     it('should create an extension context', () => {
         const ctx = createStubExtensionContext()
         const fn = sinon.spy()
