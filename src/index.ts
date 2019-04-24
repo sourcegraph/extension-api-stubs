@@ -1,4 +1,5 @@
-import { Subject, Subscription } from 'rxjs'
+import { BehaviorSubject, Subject, Subscription } from 'rxjs'
+import { mapTo } from 'rxjs/operators'
 import * as sinon from 'sinon'
 import * as sourcegraph from 'sourcegraph'
 import { MarkupKind } from 'vscode-languageserver-types'
@@ -27,6 +28,7 @@ let decorationTypeCounter = 0
  * with all methods being Sinon spys and all Subscribables being Subjects.
  */
 export const createStubSourcegraphAPI = () => {
+    const configSubject = new BehaviorSubject<any>({})
     const rootChanges = new Subject<void>()
     const openedTextDocuments = new Subject<sourcegraph.TextDocument>()
     // const shims: typeof import('sourcegraph') = {
@@ -73,7 +75,20 @@ export const createStubSourcegraphAPI = () => {
         app: {
             createDecorationType: () => ({ key: 'decorationType' + decorationTypeCounter++ }),
         },
-        configuration: {}, // TODO
+        configuration: {
+            get: <C extends object = { [key: string]: any }>() => ({
+                get: <K extends keyof C>(key: K): Readonly<C[K]> | undefined => configSubject.value[key],
+
+                update: async <K extends keyof C>(key: K, value: C[K] | undefined): Promise<void> => {
+                    configSubject.next({ ...configSubject.value, [key]: value })
+                },
+
+                get value(): Readonly<C> {
+                    return configSubject.value
+                },
+            }),
+            subscribe: (next: () => void) => configSubject.pipe(mapTo(undefined)).subscribe(next),
+        },
         search: {}, // TODO
         commands: {}, // TODO
     }
