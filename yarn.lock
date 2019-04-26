@@ -409,12 +409,12 @@
   resolved "https://registry.npmjs.org/@sourcegraph/tsconfig/-/tsconfig-4.0.0.tgz#dd2a406f90760bb789fd89fde4bd0a8d681f2767"
   integrity sha512-jxrhKbek4yu1HUDpUhqR9hAGFiUgaJ9NIM+c8JEkAnvpW67ab1AUFWb82aSVfZWX1UVqfR84AMr7xP3E8LlL+A==
 
-"@sourcegraph/tslint-config@^13.0.0":
-  version "13.0.0"
-  resolved "https://registry.npmjs.org/@sourcegraph/tslint-config/-/tslint-config-13.0.0.tgz#f75d2ea51972c9f8cab233de98824b954457729b"
-  integrity sha512-kDWngKXc7Qu8rdtsUP1pics0vOIx37e1ygjyrxMfhav722dhByxYowK3AxcbyECyaKEYt0wCp+bCqeVQX+XksQ==
+"@sourcegraph/tslint-config@^13.1.0":
+  version "13.1.0"
+  resolved "https://registry.yarnpkg.com/@sourcegraph/tslint-config/-/tslint-config-13.1.0.tgz#8053ea96bf58fcb0a9e120b129fb3e5aa03548cb"
+  integrity sha512-t4kkv7/q5+eG17LkFtNzT39dCOrokmugqsyFrVk0c8I+bH9R4lvFAgrMK6sOIaLQS0rYzPxECmgll5B5lY2haw==
   dependencies:
-    rxjs-tslint-rules "^4.19.1"
+    rxjs-tslint-rules "^4.23.0"
     tslint-config-prettier "^1.18.0"
     tslint-react "^4.0.0"
 
@@ -4752,9 +4752,9 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
-rxjs-tslint-rules@^4.19.1:
+rxjs-tslint-rules@^4.23.0:
   version "4.23.0"
-  resolved "https://registry.npmjs.org/rxjs-tslint-rules/-/rxjs-tslint-rules-4.23.0.tgz#e1aee3c1cd1e08ec013fe43f7008c60ce936c29f"
+  resolved "https://registry.yarnpkg.com/rxjs-tslint-rules/-/rxjs-tslint-rules-4.23.0.tgz#e1aee3c1cd1e08ec013fe43f7008c60ce936c29f"
   integrity sha512-8lUa9tszIT3cZjGWMGh3lYMheQJO5RxuxCn7c3rhX7IiOGAq7BX6Fu2mP/0aUC9KzmxxP47FMDULFlZnrR4Oiw==
   dependencies:
     "@phenomnomnominal/tsquery" "^3.0.0"
