@@ -1,24 +1,22 @@
+import { Location, MarkupKind, NotificationType, Position, Range, Selection } from '@sourcegraph/extension-api-classes'
 import { BehaviorSubject, Subject, Subscription } from 'rxjs'
 import { mapTo } from 'rxjs/operators'
 import * as sinon from 'sinon'
 import * as sourcegraph from 'sourcegraph'
-import { MarkupKind } from 'vscode-languageserver-types'
+import { deprecate } from 'util'
 
-const URI = URL
-type URI = URL
+interface DeprecatedTypeDefinitionProvider {
+    provideTypeDefinition(
+        document: sourcegraph.TextDocument,
+        position: Position
+    ): sourcegraph.ProviderResult<sourcegraph.Definition>
+}
 
-// TODO publish actual classes of these!
-class Position {
-    constructor(public line: number, public character: number) {}
-}
-class Range {
-    constructor(public start: Position, public end: Position) {}
-}
-class Location {
-    constructor(public uri: URI, public range: Range) {}
-}
-class Selection {
-    constructor(public anchor: Position, public active: Position) {}
+interface DeprecatedImplementationProvider {
+    provideImplementation(
+        document: sourcegraph.TextDocument,
+        position: Position
+    ): sourcegraph.ProviderResult<sourcegraph.Definition>
 }
 
 let decorationTypeCounter = 0
@@ -33,15 +31,21 @@ export const createStubSourcegraphAPI = () => {
     const openedTextDocuments = new Subject<sourcegraph.TextDocument>()
     // const shims: typeof import('sourcegraph') = {
     const stubs = {
-        internal: {
-            sourcegraphURL: 'https://sourcegraph.test',
-        },
-        URI,
+        // Classes
+        URI: URL,
         Position,
         Range,
         Location,
         Selection,
+
+        // Enums
         MarkupKind,
+        NotificationType,
+
+        // Namespaces
+        internal: {
+            sourcegraphURL: 'https://sourcegraph.test',
+        },
         workspace: {
             onDidOpenTextDocument: openedTextDocuments,
             openedTextDocuments,
@@ -64,12 +68,18 @@ export const createStubSourcegraphAPI = () => {
                 (selector: sourcegraph.DocumentSelector, provider: sourcegraph.ReferenceProvider) => new Subscription()
             ),
             registerTypeDefinitionProvider: sinon.spy(
-                (selector: sourcegraph.DocumentSelector, provider: sourcegraph.TypeDefinitionProvider) =>
-                    new Subscription()
+                deprecate(
+                    (selector: sourcegraph.DocumentSelector, provider: DeprecatedTypeDefinitionProvider) =>
+                        new Subscription(),
+                    'sourcegraph.languages.registerTypeDefinitionProvider() is deprecated. Use sourcegraph.languages.registerLocationProvider() instead.'
+                )
             ),
             registerImplementationProvider: sinon.spy(
-                (selector: sourcegraph.DocumentSelector, provider: sourcegraph.ImplementationProvider) =>
-                    new Subscription()
+                deprecate(
+                    (selector: sourcegraph.DocumentSelector, provider: DeprecatedImplementationProvider) =>
+                        new Subscription(),
+                    'sourcegraph.languages.registerImplementationProvider() is deprecated. Use sourcegraph.languages.registerLocationProvider() instead.'
+                )
             ),
         },
         app: {
