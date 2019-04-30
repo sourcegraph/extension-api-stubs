@@ -1,6 +1,7 @@
 import assert from 'assert'
 import * as sinon from 'sinon'
-import { createStubExtensionContext, createStubSourcegraphAPI } from '.'
+import * as sourcegraph from 'sourcegraph'
+import { createStubSourcegraphAPI } from './api'
 
 describe('createStubSourcegraphAPI()', () => {
     it('should return a stub API', () => {
@@ -13,6 +14,13 @@ describe('createStubSourcegraphAPI()', () => {
             assert.deepStrictEqual(stub.app.createDecorationType(), { key: 'decorationType0' })
             assert.deepStrictEqual(stub.app.createDecorationType(), { key: 'decorationType1' })
             assert.deepStrictEqual(stub.app.createDecorationType(), { key: 'decorationType2' })
+        })
+        it('should support managing the active Window', () => {
+            const stub = createStubSourcegraphAPI()
+            const newWindow = {} as sourcegraph.Window
+            assert.strictEqual(stub.app.activeWindow, undefined)
+            stub.app.activeWindowChanges.next(newWindow)
+            assert.strictEqual(stub.app.activeWindow, newWindow)
         })
     })
     describe('configuration', () => {
@@ -30,28 +38,15 @@ describe('createStubSourcegraphAPI()', () => {
             assert.deepStrictEqual(listener.args[1][0], undefined)
         })
     })
-    // describe('languages', () => {
-    //     // TODO fix Position/Range classes (publish as package) and MarkupKind enum assignability
-    //     it('should allow registering a hover provider', () => {
-    //         const stub = createStubSourcegraphAPI()
-    //         stub.languages.registerHoverProvider(['*.ts'], {
-    //             provideHover: (doc, pos) => ({
-    //                 contents: { kind: stub.MarkupKind.Markdown, value: doc.uri },
-    //                 range: new stub.Range(new stub.Position(1, 2), new stubs.Position(3, 4)),
-    //             }),
-    //         })
-    //     })
-    // })
-})
-
-describe('createStubExtensionContext()', () => {
-    it('should create an extension context', () => {
-        const ctx = createStubExtensionContext()
-        const fn = sinon.spy()
-        ctx.subscriptions.add(fn)
-        sinon.assert.notCalled(fn)
-        sinon.assert.calledOnce(ctx.subscriptions.add)
-        ctx.subscriptions.unsubscribe()
-        sinon.assert.calledOnce(fn)
+    describe('languages', () => {
+        it('should allow registering a hover provider', () => {
+            const stub = createStubSourcegraphAPI()
+            stub.languages.registerHoverProvider(['*.ts'], {
+                provideHover: (doc, pos) => ({
+                    contents: { kind: stub.MarkupKind.Markdown, value: `${doc.uri}:${pos.line}:${pos.character}` },
+                    range: new stub.Range(new stub.Position(1, 2), new stub.Position(3, 4)),
+                }),
+            })
+        })
     })
 })
