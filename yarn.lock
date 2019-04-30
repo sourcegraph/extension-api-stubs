@@ -399,6 +399,18 @@
   resolved "https://registry.npmjs.org/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
 
+"@sourcegraph/extension-api-classes@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.npmjs.org/@sourcegraph/extension-api-classes/-/extension-api-classes-1.0.2.tgz#e76ff8394deacffb7cb1edd5f5d24d714e6026ee"
+  integrity sha512-2PUTf/hedG+5DTyUmA2QPK7I/qyiwIbgQHcmAeRGlysg17okOeNFRp4AVLJsAh+NLq8poxtbyXP+dIdrCzONgw==
+  dependencies:
+    "@sourcegraph/extension-api-types" "^2.0.0"
+
+"@sourcegraph/extension-api-types@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.npmjs.org/@sourcegraph/extension-api-types/-/extension-api-types-2.0.0.tgz#b38145521c0549b2be300df53bac48b648ccbc2d"
+  integrity sha512-Te7F1RQJLBH4C8wQ2xz0nPC2vpe13F80V+Yv+c3GySOoh4DcLNN4P5u51Kh4aZPqeS5DJ7CKvHyX2SM/1EBXNg==
+
 "@sourcegraph/prettierrc@^2.2.0":
   version "2.2.0"
   resolved "https://registry.npmjs.org/@sourcegraph/prettierrc/-/prettierrc-2.2.0.tgz#af4a6fcd465b0a39a07ffbd8f2d3414d01e603e8"
@@ -5064,10 +5076,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sourcegraph@^23.0.0:
-  version "23.0.0"
-  resolved "https://registry.npmjs.org/sourcegraph/-/sourcegraph-23.0.0.tgz#1fb96015af3e84cc9cc2944823f04a7e952ed565"
-  integrity sha512-hQALHrTt+AK5ZAqUAUNhxO7ClSv/xyTjMQPBb+hQykKJrMaHTk+CnJNHs7dRfXYKnbnZeisQRjaxKGX8UecU0Q==
+sourcegraph@^23.0.1:
+  version "23.0.1"
+  resolved "https://registry.npmjs.org/sourcegraph/-/sourcegraph-23.0.1.tgz#715fcf4129a6d94bc3bfd2740d9c706ae6357ffe"
+  integrity sha512-4We7zqhOagOVxNFdS6/xT/Crhb0Arw/9ytGBu8JuHfjo5yjMtcUYt22kZyu2TaPHXwyPW9muUi1eKSFA6Qg4lw==
 
 spawn-error-forwarder@~1.0.0:
   version "1.0.0"
@@ -5717,11 +5729,6 @@ verror@1.10.0:
     assert-plus "^1.0.0"
     core-util-is "1.0.2"
     extsprintf "^1.2.0"
-
-vscode-languageserver-types@^3.14.0:
-  version "3.14.0"
-  resolved "https://registry.npmjs.org/vscode-languageserver-types/-/vscode-languageserver-types-3.14.0.tgz#d3b5952246d30e5241592b6dde8280e03942e743"
-  integrity sha512-lTmS6AlAlMHOvPQemVwo3CezxBp0sNB95KNPkqp3Nxd5VFEnuG1ByM0zlRWos0zjO3ZWtkvhal0COgiV1xIA4A==
 
 wcwidth@^1.0.0:
   version "1.0.1"

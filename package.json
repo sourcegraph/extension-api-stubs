@@ -63,10 +63,10 @@
     "typescript": "^3.4.5"
   },
   "dependencies": {
+    "@sourcegraph/extension-api-classes": "^1.0.2",
     "@types/sinon": "7.0.11",
     "rxjs": "^6.5.1",
     "sinon": "^7.3.2",
-    "sourcegraph": "^23.0.0",
-    "vscode-languageserver-types": "^3.14.0"
+    "sourcegraph": "^23.0.1"
   }
 }
