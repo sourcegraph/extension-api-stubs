@@ -63,7 +63,7 @@
     "typescript": "^3.5.3"
   },
   "dependencies": {
-    "@sourcegraph/extension-api-classes": "^1.0.2",
+    "@sourcegraph/extension-api-classes": "^1.0.3",
     "@types/sinon": "7.5.1",
     "rxjs": "^6.5.1",
     "sinon": "^7.5.0",
