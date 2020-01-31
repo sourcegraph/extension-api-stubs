@@ -398,17 +398,17 @@
   resolved "https://registry.npmjs.org/@sinonjs/text-encoding/-/text-encoding-0.7.1.tgz#8da5c6530915653f3a1f38fd5f101d8c3f8079c5"
   integrity sha512-+iTbntw2IZPb/anVDbypzfQa+ay64MW0Zo8aJ8gZPWMMK6/OubMVb6lUPMagqjOPnmtauXnFCACVl3O7ogjeqQ==
 
-"@sourcegraph/extension-api-classes@^1.0.2":
-  version "1.0.2"
-  resolved "https://registry.npmjs.org/@sourcegraph/extension-api-classes/-/extension-api-classes-1.0.2.tgz#e76ff8394deacffb7cb1edd5f5d24d714e6026ee"
-  integrity sha512-2PUTf/hedG+5DTyUmA2QPK7I/qyiwIbgQHcmAeRGlysg17okOeNFRp4AVLJsAh+NLq8poxtbyXP+dIdrCzONgw==
+"@sourcegraph/extension-api-classes@^1.0.3":
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@sourcegraph/extension-api-classes/-/extension-api-classes-1.0.3.tgz#a8b071451626414c5489aa31a9ea21d43080d339"
+  integrity sha512-nGDB8IAyDmA3/kaMYkYk4eOdUT4DGAJGcxGEe7zjRNywvktRH63eXdPttQCOkazpGmq3udL7Ael/HQmynkUzcw==
   dependencies:
-    "@sourcegraph/extension-api-types" "^2.0.0"
+    "@sourcegraph/extension-api-types" "^2.1.0"
 
-"@sourcegraph/extension-api-types@^2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmjs.org/@sourcegraph/extension-api-types/-/extension-api-types-2.0.0.tgz#b38145521c0549b2be300df53bac48b648ccbc2d"
-  integrity sha512-Te7F1RQJLBH4C8wQ2xz0nPC2vpe13F80V+Yv+c3GySOoh4DcLNN4P5u51Kh4aZPqeS5DJ7CKvHyX2SM/1EBXNg==
+"@sourcegraph/extension-api-types@^2.1.0":
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/@sourcegraph/extension-api-types/-/extension-api-types-2.1.0.tgz#dcc81eba70371c9aabc7333361f5e1ed63e7c91e"
+  integrity sha512-KWxkyphmlwam8kfYPSmoitKQRMGQCsr1ZRmNZgijT7ABKaVyk/+I5ezt2J213tM04Hi0vyg4L7iH1VCkNvm2Jw==
 
 "@sourcegraph/prettierrc@^2.2.0":
   version "2.2.0"
@@ -5152,10 +5152,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sourcegraph@^23.0.1:
-  version "23.0.1"
-  resolved "https://registry.npmjs.org/sourcegraph/-/sourcegraph-23.0.1.tgz#715fcf4129a6d94bc3bfd2740d9c706ae6357ffe"
-  integrity sha512-4We7zqhOagOVxNFdS6/xT/Crhb0Arw/9ytGBu8JuHfjo5yjMtcUYt22kZyu2TaPHXwyPW9muUi1eKSFA6Qg4lw==
+sourcegraph@^23.1.0:
+  version "23.1.0"
+  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-23.1.0.tgz#3178979805239cdf777d7b2cb9aae99c2a3d1dcb"
+  integrity sha512-pcHP/Ad1TGJWDu4vh8iDE1bi4LOvDgc2Q+amlByjSfeg2+vd4jldpaW4HuP/fMVGYvvzxOa4jrjlluWeXFqyoA==
 
 spawn-error-forwarder@~1.0.0:
   version "1.0.0"
