@@ -100,7 +100,7 @@ export const createStubSourcegraphAPI = () => {
             createDecorationType: () => ({ key: 'decorationType' + decorationTypeCounter++ }),
             createPanelView: notImplemented as ((id: string) => sourcegraph.PanelView),
         },
-        configuration: {
+        configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {
             get: <C extends object = { [key: string]: any }>(): sourcegraph.Configuration<C> => ({
                 get: <K extends keyof C>(key: K): Readonly<C[K]> | undefined => configSubject.value[key],
                 update: async <K extends keyof C>(key: K, value: C[K] | undefined): Promise<void> => {
@@ -110,8 +110,7 @@ export const createStubSourcegraphAPI = () => {
                     return configSubject.value
                 },
             }),
-            subscribe: (next: () => void) => configSubject.pipe(mapTo(undefined)).subscribe(next),
-        },
+        }),
         content: {
             registerLinkPreviewProvider: sinon.spy(
                 (urlMatchPattern: string, provider: sourcegraph.LinkPreviewProvider) => new Subscription()
