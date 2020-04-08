@@ -30,7 +30,7 @@ export const createStubSourcegraphAPI = () => {
     const configSubject = new BehaviorSubject<any>({})
     const rootChanges = new Subject<void>()
     const openedTextDocuments = new Subject<sourcegraph.TextDocument>()
-    const stubs /*: typeof import('sourcegraph') */ = {
+    const stubs /* : typeof import('sourcegraph') */ = {
         // Classes
         URI: URL,
         Position,
