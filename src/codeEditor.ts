@@ -1,13 +1,13 @@
 import { BehaviorSubject } from 'rxjs'
 import * as sinon from 'sinon'
 import * as sourcegraph from 'sourcegraph'
-import { assertTypeIsCompatible } from './util'
+import { subTypeOf } from './util'
 
 export const createStubCodeEditor = ({
     document,
     selections = [],
 }: Pick<sourcegraph.CodeEditor, 'document'> & Partial<Pick<sourcegraph.CodeEditor, 'selections'>>) => {
-    const codeEditor = {
+    const codeEditor = subTypeOf<sourcegraph.CodeEditor>()({
         type: 'CodeEditor' as const,
         document,
         get selections(): sourcegraph.Selection[] {
@@ -23,7 +23,6 @@ export const createStubCodeEditor = ({
                 decorations: sourcegraph.TextDocumentDecoration[]
             ): void => undefined
         ),
-    }
-    assertTypeIsCompatible<sourcegraph.CodeEditor>(codeEditor)
+    })
     return codeEditor
 }
