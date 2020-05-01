@@ -3,22 +3,7 @@ import { BehaviorSubject, Subject, Subscription } from 'rxjs'
 import { mapTo } from 'rxjs/operators'
 import * as sinon from 'sinon'
 import * as sourcegraph from 'sourcegraph'
-import { deprecate } from 'util'
-import { assertTypeIsCompatible, notImplemented } from './util'
-
-interface DeprecatedTypeDefinitionProvider {
-    provideTypeDefinition(
-        document: sourcegraph.TextDocument,
-        position: Position
-    ): sourcegraph.ProviderResult<sourcegraph.Definition>
-}
-
-interface DeprecatedImplementationProvider {
-    provideImplementation(
-        document: sourcegraph.TextDocument,
-        position: Position
-    ): sourcegraph.ProviderResult<sourcegraph.Definition>
-}
+import { notImplemented, subTypeOf } from './util'
 
 let decorationTypeCounter = 0
 
@@ -30,7 +15,7 @@ export const createStubSourcegraphAPI = () => {
     const configSubject = new BehaviorSubject<any>({})
     const rootChanges = new Subject<void>()
     const openedTextDocuments = new Subject<sourcegraph.TextDocument>()
-    const stubs /* : typeof import('sourcegraph') */ = {
+    const stubs = subTypeOf<typeof import('sourcegraph')>()({
         // Classes
         URI: URL,
         Position,
@@ -75,20 +60,6 @@ export const createStubSourcegraphAPI = () => {
                 (selector: sourcegraph.DocumentSelector, provider: sourcegraph.CompletionItemProvider) =>
                     new Subscription()
             ),
-            registerTypeDefinitionProvider: sinon.spy(
-                deprecate(
-                    (selector: sourcegraph.DocumentSelector, provider: DeprecatedTypeDefinitionProvider) =>
-                        new Subscription(),
-                    'sourcegraph.languages.registerTypeDefinitionProvider() is deprecated. Use sourcegraph.languages.registerLocationProvider() instead.'
-                )
-            ),
-            registerImplementationProvider: sinon.spy(
-                deprecate(
-                    (selector: sourcegraph.DocumentSelector, provider: DeprecatedImplementationProvider) =>
-                        new Subscription(),
-                    'sourcegraph.languages.registerImplementationProvider() is deprecated. Use sourcegraph.languages.registerLocationProvider() instead.'
-                )
-            ),
         },
         app: {
             windows: [] as sourcegraph.Window[],
@@ -98,7 +69,7 @@ export const createStubSourcegraphAPI = () => {
             activeWindowChanges: new BehaviorSubject<sourcegraph.Window | undefined>(undefined),
 
             createDecorationType: () => ({ key: 'decorationType' + decorationTypeCounter++ }),
-            createPanelView: notImplemented as ((id: string) => sourcegraph.PanelView),
+            createPanelView: notImplemented as (id: string) => sourcegraph.PanelView,
         },
         configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {
             get: <C extends object = { [key: string]: any }>(): sourcegraph.Configuration<C> => ({
@@ -123,7 +94,6 @@ export const createStubSourcegraphAPI = () => {
             registerCommand: sinon.spy((command: string, callback: (...args: any[]) => any) => new Subscription()),
             executeCommand: sinon.spy<(command: string, ...args: any[]) => Promise<any>>(notImplemented),
         },
-    }
-    assertTypeIsCompatible<typeof sourcegraph>(stubs)
+    })
     return stubs
 }
