@@ -6071,10 +6071,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sourcegraph@^24.0.0:
-  version "24.0.0"
-  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-24.0.0.tgz#2a2a2ba0f84e77bb2676d441b0b6c3e334466b49"
-  integrity sha512-SQtLGJ0mvCm2vQV5ABNDNXuGWqCL4rdkFWy1EAbGeDk5NrbY/KCfH6rH/4ZTl0YVyL5mYO5squMcdxjHJX2axw==
+sourcegraph@^24.1.0:
+  version "24.1.0"
+  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-24.1.0.tgz#2fb147d04ad1d75a6a5f2bd0566ab73d07dfa271"
+  integrity sha512-9m/CaPvVYYHHLosCac8syhgy4QnCiRQXqvyXCDvfuTqvFaLwApfOaP2De3cacvrA2Pjj+ZwnvIlxwA1uCFP1Uw==
 
 spawn-error-forwarder@~1.0.0:
   version "1.0.0"
