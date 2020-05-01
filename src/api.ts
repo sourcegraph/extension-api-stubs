@@ -68,6 +68,8 @@ export const createStubSourcegraphAPI = () => {
             },
             activeWindowChanges: new BehaviorSubject<sourcegraph.Window | undefined>(undefined),
 
+            registerViewProvider: sinon.spy((id: string, provider: sourcegraph.ViewProvider) => new Subscription()),
+
             createDecorationType: () => ({ key: 'decorationType' + decorationTypeCounter++ }),
             createPanelView: notImplemented as (id: string) => sourcegraph.PanelView,
         },
