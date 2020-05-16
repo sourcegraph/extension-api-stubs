@@ -41,6 +41,10 @@ export const createStubSourcegraphAPI = () => {
             onDidChangeRoots: rootChanges,
             rootChanges,
             roots: [] as sourcegraph.WorkspaceRoot[],
+            versionContextChanges: new BehaviorSubject(undefined),
+            get versionContext() {
+                return this.versionContextChanges.value
+            },
         },
         languages: {
             registerHoverProvider: sinon.spy(
