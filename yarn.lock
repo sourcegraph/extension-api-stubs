@@ -521,10 +521,10 @@
     eslint-plugin-react-hooks "^3.0.0"
     eslint-plugin-rxjs "^0.0.2-beta.20"
 
-"@sourcegraph/extension-api-classes@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@sourcegraph/extension-api-classes/-/extension-api-classes-1.0.3.tgz#a8b071451626414c5489aa31a9ea21d43080d339"
-  integrity sha512-nGDB8IAyDmA3/kaMYkYk4eOdUT4DGAJGcxGEe7zjRNywvktRH63eXdPttQCOkazpGmq3udL7Ael/HQmynkUzcw==
+"@sourcegraph/extension-api-classes@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@sourcegraph/extension-api-classes/-/extension-api-classes-1.1.0.tgz#4e3f16875639f88c6783dd356cb128fa53cee091"
+  integrity sha512-7VHKaqcDlHqsG8gNWeAJ+deOvhYJyFkrceSUOf6fkYZ1t+0rk2BaSPu6YyylMm7jmy/Kybq5DnOW8Jsymiwnmg==
   dependencies:
     "@sourcegraph/extension-api-types" "^2.1.0"
 
@@ -6105,10 +6105,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sourcegraph@^24.5.0:
-  version "24.5.0"
-  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-24.5.0.tgz#5ee53b1c933db99addfc801f958ce753afa850c3"
-  integrity sha512-VQw73xafvfZZkjNqJY0kZEXexHRbqut60ed/guDlncdZJwf6zr7jQXeqh3p5v1VH09ef23758s6u6Fqbqgmt9Q==
+sourcegraph@^24.6.0:
+  version "24.6.0"
+  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-24.6.0.tgz#d6343a0a52c2e3c20a3d7bbcadde712bbdf4a931"
+  integrity sha512-FEmuGVRcSqMtE5DItZcDa1ylm7FykcswIN6M6xa0vFbyLv6INYxjGYOGq/WlH4/AUQC0abmaysPXlyJRkGgMyg==
 
 spawn-error-forwarder@~1.0.0:
   version "1.0.0"
