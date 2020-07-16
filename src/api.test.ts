@@ -42,8 +42,8 @@ describe('createStubSourcegraphAPI()', () => {
         it('should allow registering a hover provider', () => {
             const stub = createStubSourcegraphAPI()
             stub.languages.registerHoverProvider(['*.ts'], {
-                provideHover: (doc, pos) => ({
-                    contents: { kind: stub.MarkupKind.Markdown, value: `${doc.uri}:${pos.line}:${pos.character}` },
+                provideHover: (textDocument, position) => ({
+                    contents: { kind: stub.MarkupKind.Markdown, value: `${textDocument.uri}:${position.line}:${position.character}` },
                     range: new stub.Range(new stub.Position(1, 2), new stub.Position(3, 4)),
                 }),
             })

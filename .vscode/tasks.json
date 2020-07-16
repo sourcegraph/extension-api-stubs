@@ -12,5 +12,12 @@
         "runOn": "folderOpen",
       },
     },
+    {
+      "type": "npm",
+      "script": "eslint",
+      "problemMatcher": ["$eslint-stylish"],
+      "label": "npm: eslint",
+      "detail": "eslint './src/*.ts?(x)'",
+    },
   ],
 }
