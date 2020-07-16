@@ -87,10 +87,7 @@ export const createStubSourcegraphAPI = () => {
 
             registerViewProvider: sinon.spy((id: string, provider: sourcegraph.ViewProvider) => new Subscription()),
 
-            createDecorationType: () => {
-                decorationTypeCounter++
-                return { key: `decorationType${decorationTypeCounter}` }
-            },
+            createDecorationType: () => ({ key: `decorationType${decorationTypeCounter++}` }),
             createPanelView: notImplemented as (id: string) => sourcegraph.PanelView,
         },
         configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {
