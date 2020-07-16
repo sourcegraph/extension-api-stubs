@@ -1,4 +1,12 @@
-import { Location, MarkupKind, NotificationType, Position, Range, Selection } from '@sourcegraph/extension-api-classes'
+import {
+    Location,
+    MarkupKind,
+    NotificationType,
+    Position,
+    Range,
+    Selection,
+    DocumentHighlightKind,
+} from '@sourcegraph/extension-api-classes'
 import { BehaviorSubject, Subject, Subscription } from 'rxjs'
 import { mapTo } from 'rxjs/operators'
 import * as sinon from 'sinon'
@@ -26,6 +34,7 @@ export const createStubSourcegraphAPI = () => {
         // Enums
         MarkupKind,
         NotificationType,
+        DocumentHighlightKind,
 
         // Namespaces
         internal: {
@@ -62,6 +71,10 @@ export const createStubSourcegraphAPI = () => {
             ),
             registerCompletionItemProvider: sinon.spy(
                 (selector: sourcegraph.DocumentSelector, provider: sourcegraph.CompletionItemProvider) =>
+                    new Subscription()
+            ),
+            registerDocumentHighlightProvider: sinon.spy(
+                (selector: sourcegraph.DocumentSelector, provider: sourcegraph.DocumentHighlightProvider) =>
                     new Subscription()
             ),
         },
