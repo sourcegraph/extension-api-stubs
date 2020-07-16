@@ -11,7 +11,7 @@ import { BehaviorSubject, Subject, Subscription } from 'rxjs'
 import { mapTo } from 'rxjs/operators'
 import * as sinon from 'sinon'
 import * as sourcegraph from 'sourcegraph'
-import { notImplemented, subTypeOf } from './util'
+import { notImplemented, subtypeOf } from './util'
 
 let decorationTypeCounter = 0
 
@@ -23,7 +23,7 @@ export const createStubSourcegraphAPI = () => {
     const configSubject = new BehaviorSubject<any>({})
     const rootChanges = new Subject<void>()
     const openedTextDocuments = new Subject<sourcegraph.TextDocument>()
-    const stubs = subTypeOf<typeof import('sourcegraph')>()({
+    const stubs = subtypeOf<typeof import('sourcegraph')>()({
         // Classes
         URI: URL,
         Position,
@@ -87,7 +87,7 @@ export const createStubSourcegraphAPI = () => {
 
             registerViewProvider: sinon.spy((id: string, provider: sourcegraph.ViewProvider) => new Subscription()),
 
-            createDecorationType: () => ({ key: 'decorationType' + decorationTypeCounter++ }),
+            createDecorationType: () => ({ key: `decorationType${decorationTypeCounter++}` }),
             createPanelView: notImplemented as (id: string) => sourcegraph.PanelView,
         },
         configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {

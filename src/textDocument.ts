@@ -1,13 +1,13 @@
 import * as sinon from 'sinon'
 import * as sourcegraph from 'sourcegraph'
-import { notImplemented, subTypeOf } from './util'
+import { notImplemented, subtypeOf } from './util'
 
 /**
  * Creates a stub TextDocument.
  *
  */
 export const createStubTextDocument = (init: Pick<sourcegraph.TextDocument, 'languageId' | 'text' | 'uri'>) => {
-    const textDocument = subTypeOf<sourcegraph.TextDocument>()({
+    const textDocument = subtypeOf<sourcegraph.TextDocument>()({
         ...init,
         // TODO share the implementation of these methods with the real implementations
         getWordRangeAtPosition: sinon.spy<(position: sourcegraph.Position) => sourcegraph.Range | undefined>(

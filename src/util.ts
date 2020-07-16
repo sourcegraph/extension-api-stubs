@@ -4,7 +4,8 @@
  * @template U The type to check for (explicitly specify this)
  * @template T The actual type (inferred, don't specify this)
  */
-export const subTypeOf = <U>() => <T extends U>(value: T): T => value
+// eslint-disable-next-line unicorn/consistent-function-scoping
+export const subtypeOf = <U>() => <T extends U>(value: T): T => value
 
 export function notImplemented(): never {
     throw new Error('Stub functionality not implemented')
