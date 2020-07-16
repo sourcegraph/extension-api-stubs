@@ -43,7 +43,10 @@ describe('createStubSourcegraphAPI()', () => {
             const stub = createStubSourcegraphAPI()
             stub.languages.registerHoverProvider(['*.ts'], {
                 provideHover: (textDocument, position) => ({
-                    contents: { kind: stub.MarkupKind.Markdown, value: `${textDocument.uri}:${position.line}:${position.character}` },
+                    contents: {
+                        kind: stub.MarkupKind.Markdown,
+                        value: `${textDocument.uri}:${position.line}:${position.character}`,
+                    },
                     range: new stub.Range(new stub.Position(1, 2), new stub.Position(3, 4)),
                 }),
             })
