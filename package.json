@@ -49,7 +49,7 @@
   "devDependencies": {
     "@commitlint/cli": "^9.1.2",
     "@commitlint/config-conventional": "^9.1.2",
-    "@sourcegraph/eslint-config": "^0.20.7",
+    "@sourcegraph/eslint-config": "^0.20.8",
     "@sourcegraph/prettierrc": "^3.0.3",
     "@sourcegraph/tsconfig": "^4.0.1",
     "@types/mocha": "7.0.2",
