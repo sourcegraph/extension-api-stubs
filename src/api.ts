@@ -89,6 +89,9 @@ export const createStubSourcegraphAPI = () => {
 
             createDecorationType: () => ({ key: `decorationType${decorationTypeCounter++}` }),
             createPanelView: notImplemented as (id: string) => sourcegraph.PanelView,
+            registerFileDecorationProvider: sinon.spy(
+                (provider: sourcegraph.FileDecorationProvider) => new Subscription()
+            ),
         },
         configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {
             get: <C extends object = { [key: string]: any }>(): sourcegraph.Configuration<C> => ({
@@ -112,6 +115,12 @@ export const createStubSourcegraphAPI = () => {
         commands: {
             registerCommand: sinon.spy((command: string, callback: (...args: any[]) => any) => new Subscription()),
             executeCommand: sinon.spy<(command: string, ...args: any[]) => Promise<any>>(notImplemented),
+        },
+        graphQL: {
+            execute: notImplemented as <TResult, TVariables extends object>(
+                request: string,
+                variables: TVariables
+            ) => Promise<sourcegraph.graphQL.GraphQLResult<TResult>>,
         },
     })
     return stubs
