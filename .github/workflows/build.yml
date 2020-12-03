@@ -19,7 +19,7 @@ jobs:
       - run: yarn build
       - run: yarn eslint
       - run: yarn test
-      - run: nyc report --reporter json
+      - run: yarn nyc report --reporter json
       - run: 'bash <(curl -s https://codecov.io/bash)'
       - name: release
         if: github.event_name == 'push' && github.ref == 'refs/heads/master'
