@@ -17,6 +17,7 @@ export const createStubTextDocument = (init: Pick<sourcegraph.TextDocument, 'lan
         offsetAt: sinon.spy<(position: sourcegraph.Position) => number>(notImplemented),
         positionAt: sinon.spy<(offset: number) => sourcegraph.Position>(notImplemented),
         validateRange: sinon.spy<(range: sourcegraph.Range) => sourcegraph.Range>(notImplemented),
+        getText: sinon.spy<(range?: sourcegraph.Range) => string | undefined>(notImplemented),
     })
     return textDocument
 }
