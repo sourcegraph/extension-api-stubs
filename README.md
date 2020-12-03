@@ -2,7 +2,7 @@
 
 [![npm](https://img.shields.io/npm/v/@sourcegraph/extension-api-stubs.svg)](https://www.npmjs.com/package/@sourcegraph/extension-api-stubs)
 [![downloads](https://img.shields.io/npm/dt/@sourcegraph/extension-api-stubs.svg)](https://www.npmjs.com/package/@sourcegraph/extension-api-stubs)
-[![build](https://travis-ci.org/sourcegraph/extension-api-stubs.svg?branch=master)](https://travis-ci.org/sourcegraph/extension-api-stubs)
+[![master build status](https://img.shields.io/github/workflow/status/sourcegraph/svg-screenshots/build/master?logo=github)](https://github.com/sourcegraph/svg-screenshots/actions?query=branch%3Amaster)
 [![codecov](https://codecov.io/gh/sourcegraph/extension-api-stubs/branch/master/graph/badge.svg?token=AhFNzoboTT)](https://codecov.io/gh/sourcegraph/extension-api-stubs)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
