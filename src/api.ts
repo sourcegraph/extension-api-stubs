@@ -14,6 +14,7 @@ import * as sourcegraph from 'sourcegraph'
 import { notImplemented, subtypeOf } from './util'
 
 let decorationTypeCounter = 0
+let statusBarItemTypeCounter = 0
 
 /**
  * Creates an object that (mostly) implements the Sourcegraph API,
@@ -54,6 +55,10 @@ export const createStubSourcegraphAPI = () => {
             get versionContext() {
                 return this.versionContextChanges.value
             },
+            searchContextChanges: new BehaviorSubject(undefined),
+            get searchContext() {
+                return this.searchContextChanges.value
+            },
         },
         languages: {
             registerHoverProvider: sinon.spy(
@@ -92,6 +97,7 @@ export const createStubSourcegraphAPI = () => {
             registerFileDecorationProvider: sinon.spy(
                 (provider: sourcegraph.FileDecorationProvider) => new Subscription()
             ),
+            createStatusBarItemType: () => ({ key: `statusBarItemType${statusBarItemTypeCounter++}` }),
         },
         configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {
             get: <C extends object = { [key: string]: any }>(): sourcegraph.Configuration<C> => ({

@@ -23,6 +23,10 @@ export const createStubCodeEditor = ({
                 decorations: sourcegraph.TextDocumentDecoration[]
             ): void => undefined
         ),
+        setStatusBarItem: sinon.spy(
+            (statusBarItemType: sourcegraph.StatusBarItemType, statusBarItem: sourcegraph.StatusBarItem): void =>
+                undefined
+        ),
     })
     return codeEditor
 }

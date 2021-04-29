@@ -20,5 +20,8 @@ describe('createStubCodeEditor()', () => {
 
         stub.setDecorations({ key: 'foo' }, [{ range: new Range(0, 1, 2, 3), border: 'red' }])
         sinon.assert.calledOnce(stub.setDecorations)
+
+        stub.setStatusBarItem({ key: 'foo' }, { text: 'status bar item' })
+        sinon.assert.calledOnce(stub.setStatusBarItem)
     })
 })
