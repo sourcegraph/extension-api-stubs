@@ -15,6 +15,12 @@ describe('createStubSourcegraphAPI()', () => {
             assert.deepStrictEqual(stub.app.createDecorationType(), { key: 'decorationType1' })
             assert.deepStrictEqual(stub.app.createDecorationType(), { key: 'decorationType2' })
         })
+        it('should support creating unique statusBarItemTypes', () => {
+            const stub = createStubSourcegraphAPI()
+            assert.deepStrictEqual(stub.app.createStatusBarItemType(), { key: 'statusBarItemType0' })
+            assert.deepStrictEqual(stub.app.createStatusBarItemType(), { key: 'statusBarItemType1' })
+            assert.deepStrictEqual(stub.app.createStatusBarItemType(), { key: 'statusBarItemType2' })
+        })
         it('should support managing the active Window', () => {
             const stub = createStubSourcegraphAPI()
             const newWindow = {} as sourcegraph.Window

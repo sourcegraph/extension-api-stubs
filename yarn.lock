@@ -4839,7 +4839,6 @@ npm@^6.14.8:
     cmd-shim "^3.0.3"
     columnify "~1.5.4"
     config-chain "^1.1.12"
-    debuglog "*"
     detect-indent "~5.0.0"
     detect-newline "^2.1.0"
     dezalgo "~1.0.3"
@@ -4854,7 +4853,6 @@ npm@^6.14.8:
     has-unicode "~2.0.1"
     hosted-git-info "^2.8.8"
     iferr "^1.0.2"
-    imurmurhash "*"
     infer-owner "^1.0.4"
     inflight "~1.0.6"
     inherits "^2.0.4"
@@ -4873,14 +4871,8 @@ npm@^6.14.8:
     libnpx "^10.2.4"
     lock-verify "^2.1.0"
     lockfile "^1.0.4"
-    lodash._baseindexof "*"
     lodash._baseuniq "~4.6.0"
-    lodash._bindcallback "*"
-    lodash._cacheindexof "*"
-    lodash._createcache "*"
-    lodash._getnative "*"
     lodash.clonedeep "~4.5.0"
-    lodash.restparam "*"
     lodash.union "~4.6.0"
     lodash.uniq "~4.5.0"
     lodash.without "~4.4.0"
@@ -6285,10 +6277,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sourcegraph@^25.0.0:
-  version "25.0.0"
-  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-25.0.0.tgz#5f16eb684ee23b59011e68d516df7755ebaa47f8"
-  integrity sha512-3deJcXdOdKoI5xZv4wiQXOnJw96I/BFLStwHHbUS1XlDP1yHHKQT3pKsTawm/YJ8CUirBYkIVsAA2rR/JYO4Ew==
+sourcegraph@^25.2.0:
+  version "25.2.0"
+  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-25.2.0.tgz#7978b3ca154e2703828cd4bd2fdfbc3f7994bbe8"
+  integrity sha512-2yYJN8DMFrGesDfZvaYfXie86fHl3HtPRZ4XImQ6H4d7HuHHYEkVYxlbrOD4BUgMBsit5oVUPZ9Kspu0676QAA==
 
 spawn-error-forwarder@~1.0.0:
   version "1.0.0"
