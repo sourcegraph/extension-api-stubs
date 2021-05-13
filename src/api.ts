@@ -98,6 +98,7 @@ export const createStubSourcegraphAPI = () => {
                 (provider: sourcegraph.FileDecorationProvider) => new Subscription()
             ),
             createStatusBarItemType: () => ({ key: `statusBarItemType${statusBarItemTypeCounter++}` }),
+            log: sinon.spy((message?: any, ...optionalParameters: any[]) => {}),
         },
         configuration: Object.assign(configSubject.pipe(mapTo(undefined)), {
             get: <C extends object = { [key: string]: any }>(): sourcegraph.Configuration<C> => ({
