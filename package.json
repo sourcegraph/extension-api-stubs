@@ -64,7 +64,7 @@
   },
   "dependencies": {
     "@sourcegraph/extension-api-classes": "^1.1.0",
-    "@types/sinon": "10.0.2",
+    "@types/sinon": "10.0.4",
     "rxjs": "^6.5.1",
     "sinon": "^10.0.0",
     "sourcegraph": "^25.3.0"
