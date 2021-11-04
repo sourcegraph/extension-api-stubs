@@ -67,6 +67,6 @@
     "@types/sinon": "10.0.4",
     "rxjs": "^6.5.1",
     "sinon": "^10.0.0",
-    "sourcegraph": "^25.3.0"
+    "sourcegraph": "^25.4.0"
   }
 }
