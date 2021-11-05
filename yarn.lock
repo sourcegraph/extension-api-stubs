@@ -3107,6 +3107,11 @@ graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+graphql@^15.4.0:
+  version "15.7.2"
+  resolved "https://registry.yarnpkg.com/graphql/-/graphql-15.7.2.tgz#85ab0eeb83722977151b3feb4d631b5f2ab287ef"
+  integrity sha512-AnnKk7hFQFmU/2I9YSQf3xw44ctnSFCfp3zE0N6W174gqe9fWG/2rKaKxROK7CcI3XtERpjEKFqts8o319Kf7A==
+
 growl@1.10.5:
   version "1.10.5"
   resolved "https://registry.npmjs.org/growl/-/growl-1.10.5.tgz#f2735dc2283674fa67478b10181059355c369e5e"
@@ -6336,10 +6341,10 @@ source-map@^0.6.0, source-map@^0.6.1, source-map@~0.6.1:
   resolved "https://registry.npmjs.org/source-map/-/source-map-0.6.1.tgz#74722af32e9614e9c287a8d0bbde48b5e2f1a263"
   integrity sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
 
-sourcegraph@^25.3.0:
-  version "25.3.0"
-  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-25.3.0.tgz#0ad58f40a6fb286ddaf5f441c28b2c1241098e94"
-  integrity sha512-677uVs3rq1gVeiKTZ6wrlq862dUIn02ZmEgxoPTfFMI3tlJWhdgFZOg2GpFEgFRoB1ct7rMMlRrI1cEQdB7Rkg==
+sourcegraph@^25.4.0:
+  version "25.4.0"
+  resolved "https://registry.yarnpkg.com/sourcegraph/-/sourcegraph-25.4.0.tgz#182cedc8c5090428d8456ee60d39c4ed0fdae849"
+  integrity sha512-c+sDrBAQxd3T7hEAGvLFbkHEBh9NXTppCzpA0FhULV3Y/ONqLBOO+UEhPq3iWihgHmyF18r1+lciW545h0vmZQ==
 
 spawn-error-forwarder@~1.0.0:
   version "1.0.0"
