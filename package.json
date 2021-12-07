@@ -65,7 +65,7 @@
   "dependencies": {
     "@sourcegraph/extension-api-classes": "^1.1.0",
     "@types/sinon": "10.0.4",
-    "graphql": "^15.4.0",
+    "graphql": "^15.8.0",
     "rxjs": "^6.5.1",
     "sinon": "^10.0.0",
     "sourcegraph": "^25.4.0"
