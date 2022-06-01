@@ -47,7 +47,7 @@
     "require": "ts-node/register"
   },
   "devDependencies": {
-    "@commitlint/cli": "^16.2.4",
+    "@commitlint/cli": "^16.3.0",
     "@commitlint/config-conventional": "^16.2.4",
     "@sourcegraph/eslint-config": "^0.23.0",
     "@sourcegraph/prettierrc": "^3.0.3",
